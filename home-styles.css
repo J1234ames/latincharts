@@ -1,9 +1,20 @@
 #navbar {
   display: flex;
-  background-color: rgba(0,0,0,1)
+  flex-direction: column;
+  width: 10%;
+  background-color: rgba(0,0,0,1);
+}
+
+#navbar h1 {
+  font-family: Calibri;
+  color: rgba(255,255,255,1);
+  padding: 30px;
+  font-size: 50%;
 }
 
 #navbar div {
-  font-family: Calibri
-  color: rgba(255,255,255,1)
+  font-family: Calibri;
+  color: rgba(255,255,255,1);
+  padding: 20px;
+  font-size:25%
 }
