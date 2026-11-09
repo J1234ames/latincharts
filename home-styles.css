@@ -9,6 +9,14 @@
   font-family: Calibri;
   color: rgba(255,255,255,1);
   padding: 30px;
+  font-size: 75%;
+}
+
+#navbar div.header {
+  font-family: Calibri;
+  color: rgba(255,255,255,1);
+  padding: 20px;
+  margin: 20px;
   font-size: 50%;
 }
 
@@ -16,5 +24,7 @@
   font-family: Calibri;
   color: rgba(255,255,255,1);
   padding: 20px;
-  font-size:25%
+  font-size: 25%;
+  margin: 20px;
+  margin-left:50px;
 }
