@@ -1,1 +1,9 @@
+#navbar {
+  display: flex;
+  background-color: rgba(0,0,0,1)
+}
 
+#navbar div {
+  font-family: Calibri
+  color: rgba(255,255,255,1)
+}
