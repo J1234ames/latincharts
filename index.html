@@ -1,16 +1,91 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet href="home-styles.css">
-  <title>Latin Charts</title>
-  <link rel="icon" type="image-x/icon" href="images/SPQR.png">
+  <link rel="stylesheet" href="home-styles.css">
 </head>
 <body>
   <div id="navbar">
     <h1>Latin Charts</h1>
-    <div class="head">Noun Declensions</div>
+    <div class="head" id="noun-declen">Noun Declensions</div>
+      <a class="sub" href="#">First Declension</a>
+      <a class="sub" href="#">Second Declension</a>
+      <a class="sub" href="#">Third Declension</a>
+      <a class="sub" href="#">Fourth Declension</a>
+      <a class="sub" href="#">Fifth Declension</a>
     <div class="head">Verb Conjugations</div>
+      <div class="dropdown-btn">First Conjugation</div>
+      <div class="dropdown-container">
+        <a class="dropdown-content" href="#">Active Indicative</a>
+        <a class="dropdown-content" href="#">Passive Indicative</a>
+        <a class="dropdown-content" href="#">Active Subjunctive</a>
+        <a class="dropdown-content" href="#">Passive Subjunctive</a>
+        <a class="dropdown-content" href="#">Infinitive</a>
+        <a class="dropdown-content" href="#">Participle</a>
+        <a class="dropdown-content" href="#">Gerund</a>
+        <a class="dropdown-content" href="#">Imperative</a>
+      </div>
+      <div class="dropdown-btn">Second Conjugation</div>
+      <div class="dropdown-container">
+        <a class="dropdown-content" href="#">Active Indicative</a>
+        <a class="dropdown-content" href="#">Passive Indicative</a>
+        <a class="dropdown-content" href="#">Active Subjunctive</a>
+        <a class="dropdown-content" href="#">Passive Subjunctive</a>
+        <a class="dropdown-content" href="#">Infinitive</a>
+        <a class="dropdown-content" href="#">Participle</a>
+        <a class="dropdown-content" href="#">Gerund</a>
+        <a class="dropdown-content" href="#">Imperative</a>
+      </div>
+      <div class="dropdown-btn">Third Conjugation</div>
+      <div class="dropdown-container">
+        <a class="dropdown-content" href="#">Active Indicative</a>
+        <a class="dropdown-content" href="#">Passive Indicative</a>
+        <a class="dropdown-content" href="#">Active Subjunctive</a>
+        <a class="dropdown-content" href="#">Passive Subjunctive</a>
+        <a class="dropdown-content" href="#">Infinitive</a>
+        <a class="dropdown-content" href="#">Participle</a>
+        <a class="dropdown-content" href="#">Gerund</a>
+        <a class="dropdown-content" href="#">Imperative</a>
+      </div>
+      <div class="dropdown-btn">Third-i Conjugation</div>
+      <div class="dropdown-container">
+        <a class="dropdown-content" href="#">Active Indicative</a>
+        <a class="dropdown-content" href="#">Passive Indicative</a>
+        <a class="dropdown-content" href="#">Active Subjunctive</a>
+        <a class="dropdown-content" href="#">Passive Subjunctive</a>
+        <a class="dropdown-content" href="#">Infinitive</a>
+        <a class="dropdown-content" href="#">Participle</a>
+        <a class="dropdown-content" href="#">Gerund</a>
+        <a class="dropdown-content" href="#">Imperative</a>
+      </div>
+      <div class="dropdown-btn">Fourth Conjugation</div>
+      <div class="dropdown-container">
+        <a class="dropdown-content" href="#">Active Indicative</a>
+        <a class="dropdown-content" href="#">Passive Indicative</a>
+        <a class="dropdown-content" href="#">Active Subjunctive</a>
+        <a class="dropdown-content" href="#">Passive Subjunctive</a>
+        <a class="dropdown-content" href="#">Infinitive</a>
+        <a class="dropdown-content" href="#">Participle</a>
+        <a class="dropdown-content" href="#">Gerund</a>
+        <a class="dropdown-content" href="#">Imperative</a>
+      </div>
   </div>
+  
+  <footer>Made by J1234ames through Github. View source code <a href="#">here</a>.</footer>
+  
+  <script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+        
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        };
+      });
+    };
+  </script>
 </body>
-</html>
+</html> 
