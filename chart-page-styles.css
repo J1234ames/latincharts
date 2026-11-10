@@ -2,10 +2,6 @@ html {
   font-family: Calibri;
 }
 
-.flexbox {
-  display: flex;
-}
-
 #navbar {
   display: flex;
   flex-direction: column;
