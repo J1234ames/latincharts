@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="home-styles.css">
+  <script type="text/javascript" src="home.js"></script>
 </head>
 <body>
   <div id="navbar">
@@ -71,21 +72,5 @@
   </div>
   
   <footer>Made by J1234ames through Github. View source code <a href="#">here</a>.</footer>
-  
-  <script>
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
-        
-    for (i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener("click", function() {
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-        } else {
-          dropdownContent.style.display = "block";
-        };
-      });
-    };
-  </script>
 </body>
 </html> 
