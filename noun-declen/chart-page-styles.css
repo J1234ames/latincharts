@@ -1,3 +1,7 @@
+html {
+  font-family: Calibri;
+}
+
 #navbar {
   display: flex;
   flex-direction: column;
