@@ -17,20 +17,19 @@ html {
   font-size: 200%;
 }
 
-.head {
+.head, .sub {
   position: relative;
   display: inline;
-
   padding: 10px;
+}
+
+.head {
   padding-left: 20px;
   font-size: 100%;
   font-weight: 900;
 }
 
 .sub {
-  position: relative;
-  display: inline;
-  padding: 10px;
   padding-left: 50px;
   font-size: 75%;
   font-weight: 500;
@@ -74,14 +73,9 @@ html {
 }
 
 .dropdown-btn::after {
-  content: '';
   width: 2px;
   height: 100%;
-  display: block;
-  position: absolute;
-  background-color: rgba(255,255,255,1);
   left: 22px;
-  top: 0px;
 }
 
 .dropdown-btn:hover::after {
@@ -102,14 +96,16 @@ html {
 }
 
 .dropdown-content::after {
+  width: 1px;
+  left: 52px;
+}
+
+.sub::after, .dropdown-btn::after {
   display: block;
   content: '';
-  width: 1px;
   height: 100%;
   position: absolute;
   background-color: rgba(255,255,255,1);
-  left: 52px;
-  top: 0px;
 }
 
 .dropdown-content:hover::after {
