@@ -146,3 +146,19 @@ a.footer {
 .dropdown-btn:hover .fa-chevron-down{
   color: rgba(255,255,255,1);
 }
+
+.rotate1 {
+  transform-origin: 50px 50px;
+  animation-name: myAnimation1;
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.rotate2 {
+  transform-origin: 50px 50px;
+  animation-name: myAnimation2;
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
