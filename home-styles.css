@@ -10,107 +10,95 @@ html {
   color: rgba(255,255,255,1);
 }
 
-#navbar h1 {
-  padding: 10px;
-  padding-left: 20px;
-  font-size: 300%;
+.navbar h1 {
+  color: rgba(255,255,255,1);
+  padding: 20px 20px 0px 20px;
+  font-size: 30px;
 }
 
-.head {
+.head, .sub {
   position: relative;
   display: inline;
   padding: 10px;
+}
+
+.head {
+  color: rgba(255,255,255,1);
   padding-left: 20px;
-  font-size: 200%;
+  font-size: 22.5px;
   font-weight: 900;
 }
 
 .sub {
-  position: relative;
-  display: inline;
-  padding: 10px;
-  padding-left: 50px;
-  font-size: 150%;
-  font-weight: 500;
-}
-
-#navbar a {
-  color: rgba(255,255,255,1);
   text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  padding-left: 50px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .sub:hover {
-  font-weight: 600;
+  color: rgba(255,255,255,1);
 }
 
 .sub::after {
-  content: '';
-  width: 2px;
-  height: 100%;
-  display: block;
-  position: absolute;
-  background-color: rgba(255,255,255,1);
   left: 22px;
-  top: 0px;
-}
-
-.sub:hover::after {
-  width: 3px;
 }
 
 .dropdown-btn {
+  color: rgba(255,255,255,0.75);
   position: relative;
   display: inline;
   padding: 10px;
   padding-left: 50px;
-  font-size: 150%;
+  font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .dropdown-btn:hover {
-  font-weight: 600;
+  color: rgba(255,255,255,1);
 }
 
 .dropdown-btn::after {
-  content: '';
-  width: 2px;
   height: 100%;
-  display: block;
-  position: absolute;
-  background-color: rgba(255,255,255,1);
   left: 22px;
-  top: 0px;
 }
 
-.dropdown-btn:hover::after {
-  width: 3px;
+.dropdown-btn:hover::after, .sub:hover::after {
+  width: 4px;
 }
 
 .dropdown-content {
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
   display: block;
   position: relative;
   padding: 10px;
   padding-left: 90px;
-  font-size: 100%;
+  font-size: 12.5px;
   font-weight: 500;
 }
 
 .dropdown-content:hover {
-  font-weight: 600;
+  color: rgba(255,255,255,1);
 }
 
 .dropdown-content::after {
+  width: 1px;
+  left: 52px;
+}
+
+.sub::after, .dropdown-btn::after, .dropdown-content::after {
   display: block;
   content: '';
-  width: 1px;
   height: 100%;
   position: absolute;
   background-color: rgba(255,255,255,1);
-  left: 52px;
   top: 0px;
 }
 
-.dropdown-content:hover::after {
+.dropdown-content:hover::after, .sub::after, .dropdown-btn::after {
   width: 2px;
 }
 
@@ -118,13 +106,55 @@ html {
   display: none;
 }
 
-footer {
-  color: rgba(150,150,150,1);
+h1:not(.navbar h1) {
   padding: 20px;
-  margin-top: 20px;
-  text-align: center;
+  margin-left: 330px;
+  font-size: 50px;
 }
 
-a {
+.navbar footer {
   color: rgba(150,150,150,1);
+  padding: 50px 20px 0px 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+a.footer {
+  color: rgba(150,150,150,1);
+}
+
+.fa-chevron-down {
+  float: right;
+  padding-right: 20px;
+  color: rgba(255,255,255,0.75);
+}
+
+.dropdown-btn:hover .fa-chevron-down{
+  color: rgba(255,255,255,1);
+}
+
+@keyframes rotate1 {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-180deg);}
+}
+
+@keyframes rotate2 {
+  from {transform: rotate(-180deg);}
+  to {transform: rotate(0deg);}
+}
+
+.rotate1 {
+  transform-origin: 25% 50%;
+  animation-name: rotate1;
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.rotate2 {
+  transform-origin: 25% 50%;
+  animation-name: rotate2;
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
