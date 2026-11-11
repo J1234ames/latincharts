@@ -1,19 +1,25 @@
 html {
-  background-color: rgba(0,0,0,1);
   font-family: Calibri;
 }
 
-#navbar {
+* {
+  padding: 0;
+  margin: 0;
+}
+
+div.navbar {
   display: flex;
   flex-direction: column;
   width: 100%;
-  color: rgba(255,255,255,1);
+  height: 100%;
+  padding-bottom: 15px;
+  background-color: rgba(0,0,0,1);
 }
 
 .navbar h1 {
   color: rgba(255,255,255,1);
   padding: 20px 20px 0px 20px;
-  font-size: 30px;
+  font-size: 100px;
 }
 
 .head, .sub {
@@ -25,7 +31,7 @@ html {
 .head {
   color: rgba(255,255,255,1);
   padding-left: 20px;
-  font-size: 22.5px;
+  font-size: 75px;
   font-weight: 900;
 }
 
@@ -33,7 +39,7 @@ html {
   text-decoration: none;
   color: rgba(255,255,255,0.75);
   padding-left: 50px;
-  font-size: 15px;
+  font-size: 50px;
   font-weight: 500;
 }
 
@@ -51,7 +57,7 @@ html {
   display: inline;
   padding: 10px;
   padding-left: 50px;
-  font-size: 15px;
+  font-size: 50px;
   font-weight: 500;
   cursor: pointer;
 }
@@ -76,7 +82,7 @@ html {
   position: relative;
   padding: 10px;
   padding-left: 90px;
-  font-size: 12.5px;
+  font-size: 30px;
   font-weight: 500;
 }
 
@@ -106,17 +112,11 @@ html {
   display: none;
 }
 
-h1:not(.navbar h1) {
-  padding: 20px;
-  margin-left: 330px;
-  font-size: 50px;
-}
-
 .navbar footer {
   color: rgba(150,150,150,1);
   padding: 50px 20px 0px 20px;
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 a.footer {
