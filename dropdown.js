@@ -1,9 +1,9 @@
 var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-let elements = document.getElementsByClassName("fa-chevron-down");
-let count = 0;
- 
-for (i = 0; i < dropdown.length; i++) {
+var chevrons = document.getElementsByClassName("fa-chevron-down");
+let count = [0,0,0,0,0];
+
+
+for (let i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener("click", function() {
     var dropdownContent = this.nextElementSibling;
     if (dropdownContent.style.display === "block") {
@@ -15,13 +15,13 @@ for (i = 0; i < dropdown.length; i++) {
   });
 };
 
-function rotate(i) {
-  count++;
-  if (count % 2 == 1) {
-    elements[i].classList.remove('rotate2');
-    elements[i].classList.add('rotate1');
+function rotate(n) {
+  count[n]++;
+  if (count[n] % 2 == 1) {
+    chevrons[n].classList.remove('rotate2');
+    chevrons[n].classList.add('rotate1');
   } else {
-    elements[i].classList.remove('rotate1');
-    elements[i].classList.add('rotate2');
-  }
-};     
+    chevrons[n].classList.remove('rotate1');
+    chevrons[n].classList.add('rotate2');
+  };
+}; 
