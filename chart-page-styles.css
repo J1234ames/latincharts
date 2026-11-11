@@ -158,7 +158,7 @@ a.footer {
 }
 
 .rotate1 {
-  transform-origin: 25% 50%;
+  transform-origin: center;
   animation-name: rotate1;
   animation-duration: 0.25s;
   animation-timing-function: ease;
@@ -166,7 +166,7 @@ a.footer {
 }
 
 .rotate2 {
-  transform-origin: 25% 50%;
+  transform-origin: center;
   animation-name: rotate2;
   animation-duration: 0.25s;
   animation-timing-function: ease;
