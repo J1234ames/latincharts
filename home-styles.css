@@ -11,7 +11,7 @@ html {
 div.navbar {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 30%;
   height: 100%;
   padding-bottom: 15px;
   background-color: rgba(0,0,0,1);
@@ -117,7 +117,7 @@ footer {
   color: rgba(150,150,150,1);
   padding: 50px 20px 0px 20px;
   text-align: center;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 footer a {
