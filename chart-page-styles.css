@@ -44,80 +44,60 @@ div.navbar {
 }
 
 .sub {
+  border-left: 2px solid rgba(255,255,255,0.75);
   text-decoration: none;
   color: rgba(255,255,255,0.75);
-  padding-left: 50px;
+  padding-left: 30px;
+  margin-left: 20px;
   font-size: 15px;
   font-weight: 500;
 }
 
 .sub:hover {
+  border-left: 3px solid rgba(255,255,255,1);
   color: rgba(255,255,255,1);
 }
 
-.sub::after {
-  left: 22px;
-}
-
 .dropdown-btn {
+  border-left: 2px solid rgba(255,255,255,0.75);
   color: rgba(255,255,255,0.75);
   position: relative;
   display: inline;
   padding: 10px;
-  padding-left: 50px;
+  padding-left: 30px;
+  margin-left: 20px;
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
 }
 
 .dropdown-btn:hover {
+  border-left: 3px solid rgba(255,255,255,1);
   color: rgba(255,255,255,1);
 }
 
-.dropdown-btn::after {
-  height: 100%;
-  left: 22px;
-}
-
-.dropdown-btn:hover::after, .sub:hover::after {
-  width: 4px;
-}
-
 .dropdown-content {
+  border-left: 1px solid rgba(255,255,255,0.75);
   text-decoration: none;
-  color: rgba(255,255,255,0.75);
   display: block;
   position: relative;
-  padding: 10px;
-  padding-left: 90px;
-  font-size: 12.5px;
+  color: rgba(255,255,255,0.75);
   font-weight: 500;
+  font-size: 12px; 
+  padding: 0px 0px 0px 50px;
+  transform: scale(1,0);
+  height: 0;
+  margin-left: -1px;
 }
 
 .dropdown-content:hover {
   color: rgba(255,255,255,1);
-}
-
-.dropdown-content::after {
-  width: 1px;
-  left: 52px;
-}
-
-.sub::after, .dropdown-btn::after, .dropdown-content::after {
-  display: block;
-  content: '';
-  height: 100%;
-  position: absolute;
-  background-color: rgba(255,255,255,1);
-  top: 0px;
-}
-
-.dropdown-content:hover::after, .sub::after, .dropdown-btn::after {
-  width: 2px;
+  border-left: 3px solid rgba(255,255,255,1);
 }
 
 .dropdown-container {
-  display: none;
+  border-left: 1px solid rgba(255,255,255,0.75);
+  margin-left: 40px;
 }
 
 h1:not(.navbar h1) {
@@ -139,11 +119,11 @@ a.footer {
 
 .fa-chevron-down {
   float: right;
-  margin-right: 20px;
+  margin-right: 10px;
   color: rgba(255,255,255,0.75);
 }
 
-.dropdown-btn:hover .fa-chevron-down{
+.dropdown-btn:hover .fa-chevron-down {
   color: rgba(255,255,255,1);
 }
 
@@ -157,6 +137,32 @@ a.footer {
   to {transform: rotate(0deg);}
 }
 
+@keyframes slide1 {
+  from {
+    transform: scale(1,0); 
+    padding: 0px 0px 0px 50px; 
+    height: 0;
+  }
+  to {
+    transform: scale(1, 1); 
+    padding: 5px 5px 5px 50px;
+    height: calc-size(auto, size);
+    }
+}
+
+@keyframes slide2 {
+  from {
+    transform: scale(1, 1); 
+    padding: 5px 5px 5px 50px; 
+    height: calc-size(auto, size);
+  }
+  to {
+    transform: scale(1, 0); 
+    padding: 0px 0px 0px 50px;
+    height: 0;
+  }
+}
+
 .rotate1 {
   transform-origin: center;
   animation-name: rotate1;
@@ -168,6 +174,20 @@ a.footer {
 .rotate2 {
   transform-origin: center;
   animation-name: rotate2;
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.slide1 {
+  animation-name: slide1;
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.slide2 {
+  animation-name: slide2;
   animation-duration: 0.25s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
