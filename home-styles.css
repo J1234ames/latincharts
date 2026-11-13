@@ -1,161 +1,233 @@
 html {
   font-family: Calibri;
-  background-color: rgba(0,0,0,1);
+  background: black;
 }
-
 * {
   padding: 0;
   margin: 0;
 }
-
 div.navbar {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  height: 100%;
+  width: 500px;
+  height: 1;
   padding-bottom: 15px;
-  background-color: rgba(0,0,0,1);
+  background-color: rgb(0,0,0);
 }
-
 .navbar h1 {
-  color: rgba(255,255,255,1);
-  padding: 20px 20px 0px 20px;
-  font-size: 50px;
+  padding: 20px 20px 10px 20px;
+  font-size: 75px;
+  height: 1;
+  color: rgb(255,255,255);
 }
-
+.navbar h1 a {
+  color: rgb(255,255,255);
+  text-decoration: none;
+  display: block;
+  height: 30px;
+}
 .head, .sub {
   position: relative;
   display: inline;
   padding: 10px;
 }
-
 .head {
-  color: rgba(255,255,255,1);
+  color: rgb(255,255,255);
   padding-left: 20px;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 900;
 }
-
 .sub {
   text-decoration: none;
-  color: rgba(255,255,255,0.75);
-  padding-left: 50px;
-  font-size: 25px;
-  font-weight: 500;
-}
-
-.sub:hover {
-  color: rgba(255,255,255,1);
-}
-
-.sub::after {
-  left: 22px;
-}
-
-.dropdown-btn {
-  color: rgba(255,255,255,0.75);
-  position: relative;
-  display: inline;
-  padding: 10px;
-  padding-left: 50px;
-  font-size: 25px;
+  padding-left: 30px;
+  margin-left: 20px;
+  font-size: 30px;
   font-weight: 500;
   cursor: pointer;
 }
-
-.dropdown-btn:hover {
-  color: rgba(255,255,255,1);
+.dropdown-container {
+  border-left: 1px solid rgb(191,191,191);
+  margin-left: 40px;
 }
-
-.dropdown-btn::after {
-  height: 100%;
-  left: 22px;
-}
-
-.dropdown-btn:hover::after, .sub:hover::after {
-  width: 4px;
-}
-
 .dropdown-content {
   text-decoration: none;
-  color: rgba(255,255,255,0.75);
   display: block;
   position: relative;
-  padding: 10px;
-  padding-left: 90px;
-  font-size: 20px;
   font-weight: 500;
+  font-size: 20px; 
+  padding-left: 30px;
+  margin-left: -1px;
+  box-sizing: border-box;
 }
-
-.dropdown-content:hover {
-  color: rgba(255,255,255,1);
+h1:not(.navbar h1) {
+  padding: 20px;
+  margin-left: 330px;
+  font-size: 50px;
 }
-
-.dropdown-content::after {
-  width: 1px;
-  left: 52px;
-}
-
-.sub::after, .dropdown-btn::after, .dropdown-content::after {
-  display: block;
-  content: '';
-  height: 100%;
-  position: absolute;
-  background-color: rgba(255,255,255,1);
-  top: 0px;
-}
-
-.dropdown-content:hover::after, .sub::after, .dropdown-btn::after {
-  width: 2px;
-}
-
-.dropdown-container {
-  display: none;
-}
-
 footer {
-  color: rgba(150,150,150,1);
-  padding: 50px 20px 20px 20px;
+  color: rgb(150,150,150);
+  padding: 50px 20px 10px 20px;
   text-align: center;
   font-size: 15px;
 }
-
-footer a {
-  color: rgba(150,150,150,1);
-}
-
 .fa-chevron-down {
   float: right;
   margin-right: 10px;
-  color: rgba(255,255,255,0.75);
 }
-
-.dropdown-btn:hover .fa-chevron-down{
-  color: rgba(255,255,255,1);
+@keyframes rotateIn {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
-
-@keyframes rotate1 {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(-180deg);}
+@keyframes slideIn {
+  from {
+    transform: scale(1, 1); 
+    padding: 5px 5px 5px 30px; 
+    height: calc-size(auto, size);
+  }
+  to {
+    transform: scale(1, 0); 
+    padding: 0px 0px 0px 30px;
+    height: 0;
+  }
 }
-
-@keyframes rotate2 {
-  from {transform: rotate(-180deg);}
-  to {transform: rotate(0deg);}
+@keyframes fadeIn {
+  from {
+    color: rgb(191,191,191);
+    box-shadow: 2px 0px rgb(191,191,191) inset;
+  }
+  to {
+    color: rgb(255,255,255);
+    box-shadow: 4px 0px rgb(255,255,255) inset;
+  }
 }
-
-.rotate1 {
+@keyframes fadeInSmall {
+  from {
+    box-shadow: 1px 0px rgb(191,191,191) inset;
+    color: rgb(191,191,191);  
+  }
+  to {
+    box-shadow: 3px 0px rgb(255,255,255) inset;
+    color: rgb(255,255,255);
+  }
+}
+@keyframes fadeInLink {
+  from {
+    color: rgb(150,150,150);  
+  }
+  to {
+    color: rgb(200,200,200);
+  }
+}
+.rotateInAnim {
   transform-origin: center;
-  animation-name: rotate1;
-  animation-duration: 0.25s;
-  animation-timing-function: ease;
+  animation-name: rotateIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
-
-.rotate2 {
+.rotateOutAnim {
   transform-origin: center;
-  animation-name: rotate2;
-  animation-duration: 0.25s;
-  animation-timing-function: ease;
+  animation-name: rotateIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
   animation-fill-mode: forwards;
+}
+.slideInAnim {
+  animation-name: slideIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.slideOutAnim {
+  animation-name: slideIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.fadeInAnim {
+  animation-name: fadeIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.fadeOutAnim {
+  animation-name: fadeIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.fadeInSmallAnim {
+  animation-name: fadeInSmall;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.fadeOutSmallAnim {
+  animation-name: fadeInSmall;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.fadeInLinkAnim {
+  animation-name: fadeInLink;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.fadeOutLinkAnim {
+  animation-name: fadeInLink;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.rotateIn {
+  float: right;
+  margin-right: 10px;
+  transform: rotate(0deg);
+}
+.rotateOut {
+  float: right;
+  margin-right: 10px;
+  transform: rotate(-180deg);
+}
+.slideOut {
+  transform: scale(1,1); 
+  padding: 5px 5px 5px 30px;
+  height: calc-size(auto,size);
+}
+.slideIn {
+  transform: scale(1,0); 
+  padding: 0px 0px 0px 30px;
+  height: 0;
+}
+.fadeIn {
+  box-shadow: 4px 0px rgb(255,255,255) inset;
+  color: rgb(255,255,255);
+}
+.fadeOut {
+  box-shadow: 2px 0px rgb(191,191,191) inset;
+  color: rgb(191,191,191);
+}
+.fadeInSmall {
+  box-shadow: 3px 0px rgb(255,255,255) inset;
+  color: rgb(255,255,255);
+}
+.fadeOutSmall {
+  box-shadow: 1px 0px rgb(191,191,191) inset;
+  color: rgb(191,191,191); 
+}
+.fadeInLink {
+  color: rgb(200,200,200);
+}
+.fadeOutLink {
+  color: rgb(150,150,150)
 }

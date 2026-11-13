@@ -1,194 +1,270 @@
 html {
   font-family: Calibri;
 }
-
 * {
   padding: 0;
   margin: 0;
 }
-
 div.navbar {
   float: left;
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 100%;
+  height: 100vh;
   padding-bottom: 15px;
-  background-color: rgba(0,0,0,1);
+  background-color: rgb(0,0,0);
+  overflow: scroll;
 }
-
 .navbar h1 {
-  color: rgba(255,255,255,1);
-  padding: 20px 20px 0px 20px;
+  padding: 20px 20px 10px 20px;
   font-size: 30px;
+  height: 1;
 }
-
+.navbar h1 a {
+  color: rgb(255,255,255);
+  text-decoration: none;
+  display: block;
+  height: 30px;
+}
 .navbar h2 {
-  color: rgba(255,255,255,1);
+  color: rgb(255,255,255);
   padding: 5px 10px 10px 20px;
   font-size: 100%;
   font-weight: 500;
 }
-
 .head, .sub {
   position: relative;
   display: inline;
   padding: 10px;
 }
-
 .head {
-  color: rgba(255,255,255,1);
+  color: rgb(255,255,255);
   padding-left: 20px;
   font-size: 22.5px;
   font-weight: 900;
 }
-
 .sub {
-  border-left: 2px solid rgba(255,255,255,0.75);
   text-decoration: none;
-  color: rgba(255,255,255,0.75);
-  padding-left: 30px;
-  margin-left: 20px;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.sub:hover {
-  border-left: 3px solid rgba(255,255,255,1);
-  color: rgba(255,255,255,1);
-}
-
-.dropdown-btn {
-  border-left: 2px solid rgba(255,255,255,0.75);
-  color: rgba(255,255,255,0.75);
-  position: relative;
-  display: inline;
-  padding: 10px;
   padding-left: 30px;
   margin-left: 20px;
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
 }
-
-.dropdown-btn:hover {
-  border-left: 3px solid rgba(255,255,255,1);
-  color: rgba(255,255,255,1);
+.dropdown-container {
+  border-left: 1px solid rgb(191,191,191);
+  margin-left: 40px;
 }
-
 .dropdown-content {
-  border-left: 1px solid rgba(255,255,255,0.75);
   text-decoration: none;
   display: block;
   position: relative;
-  color: rgba(255,255,255,0.75);
   font-weight: 500;
   font-size: 12px; 
-  padding: 0px 0px 0px 50px;
-  transform: scale(1,0);
-  height: 0;
+  padding-left: 30px;
   margin-left: -1px;
+  box-sizing: border-box;
 }
-
-.dropdown-content:hover {
-  color: rgba(255,255,255,1);
-  border-left: 3px solid rgba(255,255,255,1);
-}
-
-.dropdown-container {
-  border-left: 1px solid rgba(255,255,255,0.75);
-  margin-left: 40px;
-}
-
 h1:not(.navbar h1) {
   padding: 20px;
   margin-left: 330px;
   font-size: 50px;
 }
-
 .navbar footer {
-  color: rgba(150,150,150,1);
+  color: rgb(150,150,150);
   padding: 50px 20px 0px 20px;
   text-align: center;
   font-size: 15px;
 }
-
-a.footer {
-  color: rgba(150,150,150,1);
-}
-
 .fa-chevron-down {
   float: right;
   margin-right: 10px;
-  color: rgba(255,255,255,0.75);
 }
-
-.dropdown-btn:hover .fa-chevron-down {
-  color: rgba(255,255,255,1);
-}
-
-@keyframes rotate1 {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(-180deg);}
-}
-
-@keyframes rotate2 {
-  from {transform: rotate(-180deg);}
-  to {transform: rotate(0deg);}
-}
-
-@keyframes slide1 {
+@keyframes rotateIn {
   from {
-    transform: scale(1,0); 
-    padding: 0px 0px 0px 50px; 
-    height: 0;
+    transform: rotate(-180deg);
   }
   to {
-    transform: scale(1, 1); 
-    padding: 5px 5px 5px 50px;
-    height: calc-size(auto, size);
-    }
+    transform: rotate(0deg);
+  }
 }
-
-@keyframes slide2 {
+@keyframes slideIn {
   from {
     transform: scale(1, 1); 
-    padding: 5px 5px 5px 50px; 
+    padding: 5px 5px 5px 30px; 
     height: calc-size(auto, size);
   }
   to {
     transform: scale(1, 0); 
-    padding: 0px 0px 0px 50px;
+    padding: 0px 0px 0px 30px;
     height: 0;
   }
 }
-
-.rotate1 {
+@keyframes fadeIn {
+  from {
+    color: rgb(191,191,191);
+    box-shadow: 2px 0px rgb(191,191,191) inset;
+  }
+  to {
+    color: rgb(255,255,255);
+    box-shadow: 4px 0px rgb(255,255,255) inset;
+  }
+}
+@keyframes fadeInSmall {
+  from {
+    box-shadow: 1px 0px rgb(191,191,191) inset;
+    color: rgb(191,191,191);  
+  }
+  to {
+    box-shadow: 3px 0px rgb(255,255,255) inset;
+    color: rgb(255,255,255);
+  }
+}
+@keyframes fadeInLink {
+  from {
+    color: rgb(150,150,150);  
+  }
+  to {
+    color: rgb(200,200,200);
+  }
+}
+@keyframes fadeInHome {
+  from {
+    box-shadow: 0px 0px rgb(255,255,255) inset;
+    padding-left: 0px;
+  }
+  to {
+    box-shadow: 8px 0px rgb(255,255,255) inset;
+    padding-left: 12px;
+  }
+}
+.rotateInAnim {
   transform-origin: center;
-  animation-name: rotate1;
-  animation-duration: 0.25s;
-  animation-timing-function: ease;
+  animation-name: rotateIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
-
-.rotate2 {
+.rotateOutAnim {
   transform-origin: center;
-  animation-name: rotate2;
-  animation-duration: 0.25s;
-  animation-timing-function: ease;
+  animation-name: rotateIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
   animation-fill-mode: forwards;
 }
-
-.slide1 {
-  animation-name: slide1;
-  animation-duration: 0.25s;
-  animation-timing-function: ease;
+.slideInAnim {
+  animation-name: slideIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
-
-.slide2 {
-  animation-name: slide2;
-  animation-duration: 0.25s;
-  animation-timing-function: ease;
+.slideOutAnim {
+  animation-name: slideIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
   animation-fill-mode: forwards;
+}
+.fadeInAnim {
+  animation-name: fadeIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.fadeOutAnim {
+  animation-name: fadeIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.fadeInSmallAnim {
+  animation-name: fadeInSmall;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.fadeOutSmallAnim {
+  animation-name: fadeInSmall;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.fadeInLinkAnim {
+  animation-name: fadeInLink;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.fadeOutLinkAnim {
+  animation-name: fadeInLink;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.fadeInHomeAnim {
+  animation-name: fadeInHome;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.fadeOutHomeAnim {
+  animation-name: fadeInHome;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.rotateIn {
+  float: right;
+  margin-right: 10px;
+  transform: rotate(0deg);
+}
+.rotateOut {
+  float: right;
+  margin-right: 10px;
+  transform: rotate(-180deg);
+}
+.slideOut {
+  transform: scale(1,1); 
+  padding: 5px 5px 5px 30px;
+  height: calc-size(auto,size);
+}
+.slideIn {
+  transform: scale(1,0); 
+  padding: 0px 0px 0px 30px;
+  height: 0;
+}
+.fadeIn {
+  box-shadow: 4px 0px rgb(255,255,255) inset;
+  color: rgb(255,255,255);
+}
+.fadeOut {
+  box-shadow: 2px 0px rgb(191,191,191) inset;
+  color: rgb(191,191,191);
+}
+.fadeInSmall {
+  box-shadow: 3px 0px rgb(255,255,255) inset;
+  color: rgb(255,255,255);
+}
+.fadeOutSmall {
+  box-shadow: 1px 0px rgb(191,191,191) inset;
+  color: rgb(191,191,191); 
+}
+.fadeInLink {
+  color: rgb(200,200,200);
+}
+.fadeOutLink {
+  color: rgb(150,150,150)
+}
+.fadeInHome {
+  box-shadow: 8px 0px rgb(255,255,255) inset;
+  padding-left: 12px;
+}
+.fadeOutHome {
+  box-shadow: 0px 0px rgb(255,255,255) inset;
+  padding-left: 0px;
 }
