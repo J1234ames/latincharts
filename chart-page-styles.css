@@ -16,15 +16,27 @@ div.navbar {
   overflow: scroll;
 }
 .navbar h1 {
-  padding: 20px 20px 10px 20px;
+  padding: 20px 20px 0px 20px;
   font-size: 30px;
   height: 1;
 }
 .navbar h1 a {
-  color: rgb(255,255,255);
   text-decoration: none;
-  display: block;
-  height: 30px;
+  color: rgb(255,255,255);
+}
+.navbar h1 a .fa-house {
+  color: rgb(255,255,255);
+  height: 1;
+  transform-origin: left;
+  transform: scale(0,0.8);
+  padding-right: 0px;
+  width: 0;
+  transition: 0.15s;
+}
+.navbar h1 a:hover .fa-house {
+  transform: scale(0.8,0.8);
+  padding-right: 5px;
+  width: calc-size(auto,size);
 }
 .navbar h2 {
   color: rgb(255,255,255);
@@ -50,6 +62,13 @@ div.navbar {
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
+  color: rgb(191,191,191);
+  box-shadow: 2px 0px rgb(191,191,191) inset;
+  transition: 0.15s;
+}
+.sub:hover {
+  color: rgb(255,255,255);
+  box-shadow: 4px 0px rgb(255,255,255) inset;
 }
 .dropdown-container {
   border-left: 1px solid rgb(191,191,191);
@@ -64,6 +83,13 @@ div.navbar {
   padding-left: 30px;
   margin-left: -1px;
   box-sizing: border-box;
+  color: rgb(191,191,191);
+  box-shadow: 1px 0px rgb(191,191,191) inset; 
+  transition: 0.15s;
+}
+.dropdown-content:hover {
+    color: rgb(255,255,255);
+    box-shadow: 2px 0px rgb(255,255,255) inset;  
 }
 h1:not(.navbar h1) {
   padding: 20px;
@@ -80,191 +106,67 @@ h1:not(.navbar h1) {
   float: right;
   margin-right: 10px;
 }
+footer a {
+  color: rgb(150,150,150);
+  transition: 0.15s;
+}
+footer a:hover {
+  color: rgb(200,200,200);
+}
 @keyframes rotateIn {
   from {
-    transform: rotate(-180deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(0deg);
+    transform: rotate(-180deg);
   }
 }
 @keyframes slideIn {
   from {
-    transform: scale(1, 1); 
-    padding: 5px 5px 5px 30px; 
-    height: calc-size(auto, size);
+    transform: scale(1,0); 
+    padding: 0px 0px 0px 30px;
+    height: 0;
   }
   to {
-    transform: scale(1, 0); 
+    transform: scale(1,1); 
+    padding: 5px 5px 5px 30px; 
+    height: calc-size(auto,size);
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: scale(1,1); 
+    padding: 5px 5px 5px 30px; 
+    height: calc-size(auto,size);
+  }
+  to {
+    transform: scale(1,0); 
     padding: 0px 0px 0px 30px;
     height: 0;
   }
 }
-@keyframes fadeIn {
-  from {
-    color: rgb(191,191,191);
-    box-shadow: 2px 0px rgb(191,191,191) inset;
-  }
-  to {
-    color: rgb(255,255,255);
-    box-shadow: 4px 0px rgb(255,255,255) inset;
-  }
-}
-@keyframes fadeInSmall {
-  from {
-    box-shadow: 1px 0px rgb(191,191,191) inset;
-    color: rgb(191,191,191);  
-  }
-  to {
-    box-shadow: 3px 0px rgb(255,255,255) inset;
-    color: rgb(255,255,255);
-  }
-}
-@keyframes fadeInLink {
-  from {
-    color: rgb(150,150,150);  
-  }
-  to {
-    color: rgb(200,200,200);
-  }
-}
-@keyframes fadeInHome {
-  from {
-    box-shadow: 0px 0px rgb(255,255,255) inset;
-    padding-left: 0px;
-  }
-  to {
-    box-shadow: 8px 0px rgb(255,255,255) inset;
-    padding-left: 12px;
-  }
-}
-.rotateInAnim {
-  transform-origin: center;
-  animation-name: rotateIn;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-.rotateOutAnim {
-  transform-origin: center;
-  animation-name: rotateIn;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-in;
-  animation-direction: reverse;
-  animation-fill-mode: forwards;
-}
-.slideInAnim {
-  animation-name: slideIn;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-.slideOutAnim {
-  animation-name: slideIn;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-in;
-  animation-direction: reverse;
-  animation-fill-mode: forwards;
-}
-.fadeInAnim {
-  animation-name: fadeIn;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-.fadeOutAnim {
-  animation-name: fadeIn;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-in;
-  animation-direction: reverse;
-  animation-fill-mode: forwards;
-}
-.fadeInSmallAnim {
-  animation-name: fadeInSmall;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-.fadeOutSmallAnim {
-  animation-name: fadeInSmall;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-in;
-  animation-direction: reverse;
-  animation-fill-mode: forwards;
-}
-.fadeInLinkAnim {
-  animation-name: fadeInLink;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-.fadeOutLinkAnim {
-  animation-name: fadeInLink;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-in;
-  animation-direction: reverse;
-  animation-fill-mode: forwards;
-}
-.fadeInHomeAnim {
-  animation-name: fadeInHome;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-.fadeOutHomeAnim {
-  animation-name: fadeInHome;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-in;
-  animation-direction: reverse;
-  animation-fill-mode: forwards;
-}
 .rotateIn {
-  float: right;
-  margin-right: 10px;
-  transform: rotate(0deg);
+  transform-origin: center;
+  animation-name: rotateIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 .rotateOut {
-  float: right;
-  margin-right: 10px;
-  transform: rotate(-180deg);
-}
-.slideOut {
-  transform: scale(1,1); 
-  padding: 5px 5px 5px 30px;
-  height: calc-size(auto,size);
+  transform-origin: center;
+  animation-name: rotateIn;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
 }
 .slideIn {
-  transform: scale(1,0); 
-  padding: 0px 0px 0px 30px;
-  height: 0;
+  animation-name: slideIn;
+  animation-duration: 0.15s;
+  animation-fill-mode: forwards;
 }
-.fadeIn {
-  box-shadow: 4px 0px rgb(255,255,255) inset;
-  color: rgb(255,255,255);
-}
-.fadeOut {
-  box-shadow: 2px 0px rgb(191,191,191) inset;
-  color: rgb(191,191,191);
-}
-.fadeInSmall {
-  box-shadow: 3px 0px rgb(255,255,255) inset;
-  color: rgb(255,255,255);
-}
-.fadeOutSmall {
-  box-shadow: 1px 0px rgb(191,191,191) inset;
-  color: rgb(191,191,191); 
-}
-.fadeInLink {
-  color: rgb(200,200,200);
-}
-.fadeOutLink {
-  color: rgb(150,150,150)
-}
-.fadeInHome {
-  box-shadow: 8px 0px rgb(255,255,255) inset;
-  padding-left: 12px;
-}
-.fadeOutHome {
-  box-shadow: 0px 0px rgb(255,255,255) inset;
-  padding-left: 0px;
+.slideOut {
+  animation-name: slideOut;
+  animation-duration: 0.15s;
+  animation-fill-mode: forwards;
 }
