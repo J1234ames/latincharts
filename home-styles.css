@@ -4,8 +4,9 @@ h1:not(.navbar h1) {
   font-size: 60px;
 }
 h2:not(.navbar h1) {
-  padding: 20px;
+  padding-right: 20px;
   margin-left: 330px;
   font-size: 30px;
-  color: rgb(150,150,150);
+  font-weight: 300px;
+  color: rgb(175,175,175);
 }
