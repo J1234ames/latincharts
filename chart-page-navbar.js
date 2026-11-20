@@ -24,9 +24,9 @@ for (let i = 0; i < dropdownBtn.length; i++) {
   dropdownBtn[i].addEventListener("click", function() {
     chevrons[i].classList.toggle("rotateIn");
     chevrons[i].classList.toggle("rotateOut");
-    for (let n = 0; n < 8; n++) {
-      dropdownContent[n + 8 * i].classList.toggle("slideIn");
-      dropdownContent[n + 8 * i].classList.toggle("slideOut");
+    for (let n = 0; n < 3; n++) {
+      dropdownContent[n + 3 * i].classList.toggle("slideIn");
+      dropdownContent[n + 3 * i].classList.toggle("slideOut");
     };
   });
 };
