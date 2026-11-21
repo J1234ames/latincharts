@@ -1,4 +1,5 @@
 div.navbar {
+  position: fixed;
   float: left;
   display: flex;
   flex-direction: column;
